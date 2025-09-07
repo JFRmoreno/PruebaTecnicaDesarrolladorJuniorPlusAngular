@@ -71,13 +71,7 @@ export const environment = {
 - **pages/**: Páginas principales de la aplicación.
 - **services/**: Servicios para la lógica de negocio y comunicación con la API.
 
-## Pruebas
 
-Las pruebas unitarias están configuradas con Jasmine y Karma. Ejecuta:
-
-```sh
-npm test
-```
 
 ## Requisitos
 
