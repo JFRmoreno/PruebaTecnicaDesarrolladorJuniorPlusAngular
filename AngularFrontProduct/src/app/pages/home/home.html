@@ -1,0 +1,41 @@
+<br>
+
+<div class="tabla">
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Precio</th>
+      <th>Fecha de Creación</th>
+      <th>MODIFICAR</th>
+      <th>ELIMINAR</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (product of products; track $index) {
+        <tr >
+
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.price  }}</td>
+          <td>{{ product.createdAt  }}</td>
+          <td><button (click)="modifyProduct(product.id)">Modificar</button></td>
+          <td><button (click)="deleteProduct(product.id, $index)">Eliminar</button></td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+<div class="botonesHome">
+  <div>
+    <button [disabled]="row<=0" (click)="mapProducts(10, -10)">Anterior Pag</button>
+    <button [disabled]="products.length<=9" (click)="mapProducts(10, 10)">Siguiente Pag</button>
+  </div>
+  <br>/
+  <button routerLink="/manage"><a >Crear / Modificar producto</a> </button>
+</div>
+
+<router-outlet></router-outlet>

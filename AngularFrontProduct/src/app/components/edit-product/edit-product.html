@@ -1,0 +1,11 @@
+<p>Modifcar Producto</p>
+<a>Id del Producto <input type="number" name="id" placeholder="ID del producto" id="productId" [(ngModel)]="productId" required #id="ngModel" ></a>
+<br>
+<a>Nombre del producto <input type="text" name="nombre" placeholder="Nombre del producto" id="productName" [(ngModel)]="productName" required #nombre="ngModel"></a>
+<br>
+<a>Descripcion del producto <input type="text" placeholder="Descripción del producto" id="productDescription" [(ngModel)]="productDescription"></a>
+<br>
+<a>Precio <input type="number" placeholder="Precio del producto" id="productPrice" [(ngModel)]="productPrice" required pattern="^\d+(\.\d{1,2})?$" #precio="ngModel"></a>
+<br>
+
+<button class="editarbtn" (click)="editarProducto()" [disabled]="nombre.invalid || precio.invalid || productPrice <= 0 || id.invalid">Guardar Cambios</button>

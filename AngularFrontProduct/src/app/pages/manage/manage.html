@@ -1,0 +1,29 @@
+
+<div class="main">
+
+  <div class="container">
+    <p>{{random}} </p>
+    <div class="botones">
+      <button (click)="toggleComponent(true)" >Crear Producto</button>
+      <button (click)="toggleComponent(false)">Editar Producto</button>
+    </div>
+    <div class="componente">
+      @if (cambiarComponent){
+        <app-create-product></app-create-product>
+      }
+      @else{
+        <app-edit-product [data]="product"></app-edit-product>
+      }
+    </div>
+
+    <br>
+
+      <button routerLink="/home">Volver</button>
+
+</div>
+</div>
+
+
+
+
+<router-outlet></router-outlet>

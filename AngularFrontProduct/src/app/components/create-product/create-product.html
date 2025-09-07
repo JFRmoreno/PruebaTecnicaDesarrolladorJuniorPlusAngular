@@ -1,0 +1,16 @@
+<p>Crear Producto</p>
+<form #form="ngForm">
+  <label>Nombre del producto:<input type="text" placeholder="Nombre del producto" name="nombre" id="nombre" [(ngModel)]="name" required #nombre="ngModel"/></label>
+  <br />
+
+  <label>Descripción del producto: <input type="text" placeholder="Descripción del producto" name="descripcion" id="descripcion" [(ngModel)]="description"/></label>
+  <br />
+
+  <label>Precio del producto:<input type="text" placeholder="Precio del producto" name="precio" id="precio" [(ngModel)]="price" required pattern="^\d+(\.\d{1,2})?$" #precio="ngModel"/></label>
+  <br />
+  <br />
+
+
+  <button class="guardarbtn" (click)="crearProducto()" [disabled]="nombre.invalid || precio.invalid || price <= 0">Guardar Producto</button>
+</form>
+
